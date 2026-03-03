@@ -4,8 +4,8 @@ console.log("why");
 function setup() {
 	console.log("setup: wekonfgownfg");
     cnv = new Canvas(800, 800);
-	world.gravity.y = 10;
-    playerGroup = new group();
+	world.gravity.y = 0;
+    playerGroup = new Group();
 	bob = new Sprite(180, 120, 40, 55, 'd');
 
     bob.color = 'red';
@@ -13,7 +13,7 @@ function setup() {
 	bob.rotationSpeed = -22;
     bob.vel.x = 1;
 	bob.bounciness = 0.7;
-	bob.drag = 0.6;
+	bob.drag = -0.5;
     playerGroup.add(bob);
     console.log("setup: player completed");
 
@@ -32,7 +32,7 @@ function setup() {
 
 
 
-}
+};
 
 
 
@@ -40,7 +40,7 @@ function setup() {
 ///Draw Loop
 function draw() {
 	background('white');
-}
+};
 
 
 
