@@ -1,6 +1,7 @@
 console.log("why");
 
 ///A little setup for a test
+const VELARRAY = [-1, 1];
 function setup() {
 	console.log("setup: wekonfgownfg");
     cnv = new Canvas(800, 800);
@@ -10,10 +11,9 @@ function setup() {
 
     bob.color = 'red';
 
-	bob.rotationSpeed = -22;
     bob.vel.x = 1;
 	bob.bounciness = 0.7;
-	bob.drag = -0.5;
+	bob.drag = 0.9;
     playerGroup.add(bob);
     console.log("setup: player completed");
 
@@ -30,16 +30,76 @@ function setup() {
 	platform_4 = new Sprite(500, 750, 850, 15, 'k');
 	console.log("setup: walls done");
 
-
+ alienGroup = new Group();
+    aliens();
+	console.log("Aliens Spawned")
 
 };
 
+function func2Call(_alien, _playerGroup) {
+
+// Delete the alien which was hit
+
+_alien.remove();
+alienGroup.removeSprites();
+
+}
+
+function aliens() {
+
+	for (i = 0; i < 20; i++) {
+
+
+		
+  alien = new Sprite(random(425, 475), random(425, 475), 20);
+
+  alien.vel.x = random(4, 7) * random(VELARRAY);
+
+  alien.vel.y = random(4, 7) * random(VELARRAY);
+
+  alien.bounciness = 0.4;
+
+  alien.friction = 0.9;
+
+  alienGroup.add(alien);
+
+
+	}
+
+	alienGroup.collides(playerGroup, func2Call);
+
+}
 
 
 
 ///Draw Loop
 function draw() {
 	background('white');
+
+
+	    if (kb.pressing('left')) {
+
+    bob.vel.x = -3.5;
+
+}
+
+else if (kb.pressing ('right')) {
+
+   	   bob.vel.x = 3.5;
+
+}
+
+else if (kb.pressing ('up')) {
+
+   	   bob.vel.y = -3.5;
+
+}
+
+else if (kb.pressing ('down')) {
+
+   	   bob.vel.y = 3.5;
+
+}
 };
 
 
