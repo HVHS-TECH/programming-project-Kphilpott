@@ -47,7 +47,7 @@ alienGroup.removeSprites();
 
 function aliens() {
 
-	for (i = 0; i < 7; i++) {
+	for (i = 0; i < 10; i++) {
 
 
 		
@@ -57,9 +57,9 @@ function aliens() {
 
   alien.vel.y = random(4, 7) * random(VELARRAY);
 
-  alien.bounciness = 0.4;
+  alien.bounciness = 0.5;
 
-  alien.friction = 0.9;
+  alien.friction = 0.8;
 
   alienGroup.add(alien);
 
