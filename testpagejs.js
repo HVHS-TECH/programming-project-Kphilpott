@@ -4,24 +4,17 @@ console.log("why");
 const VELARRAY = [-1, 1];
 function setup() {
 	console.log("setup: wekonfgownfg");
-    cnv = new Canvas(800, 800);
+	cnv = new Canvas(800, 800);
 	world.gravity.y = 0;
-    playerGroup = new Group();
+	playerGroup = new Group();
 	bob = new Sprite(180, 120, 40, 55, 'd');
 
-    bob.color = 'red';
-
-    bob.vel.x = 1;
+	bob.color = 'red';
+	bob.vel.x = 1;
 	bob.bounciness = 0.7;
 	bob.drag = 0.9;
-    playerGroup.add(bob);
-    console.log("setup: player completed");
-
-
-
-
-
-
+	playerGroup.add(bob);
+	console.log("setup: player completed");
 
 
 	platform_1 = new Sprite(70, 500, 15, 850, 'k');
@@ -30,18 +23,18 @@ function setup() {
 	platform_4 = new Sprite(500, 750, 850, 15, 'k');
 	console.log("setup: walls done");
 
- alienGroup = new Group();
-    aliens();
+	alienGroup = new Group();
+	aliens();
 	console.log("Aliens Spawned")
 
 };
 
 function func2Call(_alien, _playerGroup) {
 
-// Delete the alien which was hit
+	// Delete the alien which was hit
 
-_alien.remove();
-alienGroup.removeSprites();
+	_alien.remove();
+	alienGroup.removeSprites();
 
 }
 
@@ -49,25 +42,15 @@ function aliens() {
 
 	for (i = 0; i < 10; i++) {
 
-
-		
-  alien = new Sprite(random(425, 475), random(425, 475), 20);
-
-  alien.vel.x = random(4, 7) * random(VELARRAY);
-
-  alien.vel.y = random(4, 7) * random(VELARRAY);
-
-  alien.bounciness = 0.5;
-
-  alien.friction = 0.8;
-
-  alienGroup.add(alien);
-
+		alien = new Sprite(random(425, 475), random(425, 475), 20);
+		alien.vel.x = random(4, 7) * random(VELARRAY);
+		alien.vel.y = random(4, 7) * random(VELARRAY);
+		alien.bounciness = 0.5;
+		alien.friction = 0.8;
+		alienGroup.add(alien);
 
 	}
-
 	alienGroup.collides(playerGroup, func2Call);
-
 }
 
 
@@ -76,30 +59,21 @@ function aliens() {
 function draw() {
 	background('white');
 
+	if (kb.pressing('left')) {
+		bob.vel.x = -3.5;
+	}
 
-	    if (kb.pressing('left')) {
+	else if (kb.pressing('right')) {
+		bob.vel.x = 3.5;
+	}
 
-    bob.vel.x = -3.5;
+	else if (kb.pressing('up')) {
+		bob.vel.y = -3.5;
+	}
 
-}
-
-else if (kb.pressing ('right')) {
-
-   	   bob.vel.x = 3.5;
-
-}
-
-else if (kb.pressing ('up')) {
-
-   	   bob.vel.y = -3.5;
-
-}
-
-else if (kb.pressing ('down')) {
-
-   	   bob.vel.y = 3.5;
-
-}
+	else if (kb.pressing('down')) {
+		bob.vel.y = 3.5;
+	}
 };
 
 
