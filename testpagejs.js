@@ -33,8 +33,12 @@ function func2Call(_alien, _playerGroup) {
 
 	// Delete the alien which was hit
 
-	_alien.remove();
-	alienGroup.removeSprites();
+	
+	alienGroup.deleteAll();
+	playerGroup.deleteAll();
+
+	
+
 
 }
 
@@ -74,6 +78,13 @@ function draw() {
 	else if (kb.pressing('down')) {
 		bob.vel.y = 3.5;
 	}
+
+if (alienGroup.collides(playerGroup)){
+	Text("Game Over!", 350, 350)
+}
+
+///pain, theres nothing online about this... cant make it do a game over screen
+
 };
 
 
