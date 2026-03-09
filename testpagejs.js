@@ -49,8 +49,9 @@ function aliens() {
 		alien = new Sprite(random(425, 475), random(425, 475), 20);
 		alien.vel.x = random(4, 7) * random(VELARRAY);
 		alien.vel.y = random(4, 7) * random(VELARRAY);
-		alien.bounciness = 0.9;
+		alien.bounciness = 0.7;
 		alien.friction = -0.0000001;
+		alien.drag = -0.05;
 		alienGroup.add(alien);
 
 	}
