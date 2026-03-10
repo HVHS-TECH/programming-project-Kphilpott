@@ -2,6 +2,8 @@ console.log("why");
 
 ///A little setup for a test
 const VELARRAY = [-1, 1];
+const LENGTH = 850;
+const HEIGHT = 15;
 function setup() {
 	console.log("setup: wekonfgownfg");
 	cnv = new Canvas(800, 800);
@@ -9,7 +11,7 @@ function setup() {
 	playerGroup = new Group();
 	
 	///Create the player named "bob"
-	bob = new Sprite(180, 120, 40, 55, 'd');
+	bob = new Sprite(180, 120, 30, 35, 'd');
 	bob.color = 'red';
 	bob.vel.x = 1;
 	bob.bounciness = 0.7;
@@ -18,10 +20,12 @@ function setup() {
 	console.log("setup: player completed");
 
      ///Walls, numbered in order of left top right bottom
-	platform_1 = new Sprite(70, 500, 15, 850, 'k');
-	platform_2 = new Sprite(500, 70, 850, 15, 'k');
-	platform_3 = new Sprite(750, 500, 15, 850, 'k');
-	platform_4 = new Sprite(500, 750, 850, 15, 'k');
+	 //first two numbers in each line of code are the coordinates it spawns at!
+	 //its messy because my teacher told me to make it worse
+	platform_1 = new Sprite(70, 500, HEIGHT, LENGTH, 'k');
+	platform_2 = new Sprite(500, 70, LENGTH, HEIGHT, 'k');
+	platform_3 = new Sprite(750, 500, HEIGHT, LENGTH, 'k');
+	platform_4 = new Sprite(500, 750, LENGTH, HEIGHT, 'k');
 	console.log("setup: walls done");
 
 	//create alien group and run function to spawn them, then log it.
@@ -43,8 +47,8 @@ function aliens() {
 	for (i = 0; i < 10; i++) {
 
 		alien = new Sprite(random(425, 475), random(425, 475), 20);
-		alien.vel.x = random(4, 7) * random(VELARRAY);
-		alien.vel.y = random(4, 7) * random(VELARRAY);
+		alien.vel.x = random(0.5, 0.7) * random(VELARRAY);
+		alien.vel.y = random(0.5, 0.7) * random(VELARRAY);
 		alien.bounciness = 1;
 		alien.friction = -0.0000001;
 		alien.drag = -0.05;
