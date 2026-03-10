@@ -7,8 +7,9 @@ function setup() {
 	cnv = new Canvas(800, 800);
 	world.gravity.y = 0;
 	playerGroup = new Group();
+	
+	///Create the player named "bob"
 	bob = new Sprite(180, 120, 40, 55, 'd');
-
 	bob.color = 'red';
 	bob.vel.x = 1;
 	bob.bounciness = 0.7;
@@ -16,34 +17,29 @@ function setup() {
 	playerGroup.add(bob);
 	console.log("setup: player completed");
 
-
+     ///Walls, numbered in order of left top right bottom
 	platform_1 = new Sprite(70, 500, 15, 850, 'k');
 	platform_2 = new Sprite(500, 70, 850, 15, 'k');
 	platform_3 = new Sprite(750, 500, 15, 850, 'k');
 	platform_4 = new Sprite(500, 750, 850, 15, 'k');
 	console.log("setup: walls done");
 
+	//create alien group and run function to spawn them, then log it.
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-
 };
 
 function func2Call(_alien, _playerGroup) {
 
-	// Delete the alien which was hit
-
-	
+	// Delete the aliens and player when they touch, requiring a page reload after.
 	alienGroup.deleteAll();
 	playerGroup.deleteAll();
-
-	
-
 
 }
 
 function aliens() {
-
+    //spawn 10 "aliens"
 	for (i = 0; i < 10; i++) {
 
 		alien = new Sprite(random(425, 475), random(425, 475), 20);
@@ -64,6 +60,8 @@ function aliens() {
 function draw() {
 	background('white');
 
+
+	//movement controls
 	if (kb.pressing('left')) {
 		bob.vel.x = -3.5;
 	}
@@ -80,6 +78,8 @@ function draw() {
 		bob.vel.y = 3.5;
 	}
 
+
+	//failed code
 if (alienGroup.collides(playerGroup)){
 	Text("Game Over!", 350, 350)
 }
