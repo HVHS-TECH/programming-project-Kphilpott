@@ -21,7 +21,6 @@ function setup() {
 
      ///Walls, numbered in order of left top right bottom
 	 //first two numbers in each line of code are the coordinates it spawns at!
-	 //its messy because my teacher told me to make it worse by adding unneccesary constants    it's like trying to explain quantum physics to a block of moldy cheese!
 	platform_1 = new Sprite(70, 500, HEIGHT, LENGTH, 'k');
 	platform_2 = new Sprite(500, 70, LENGTH, HEIGHT, 'k');
 	platform_3 = new Sprite(750, 500, HEIGHT, LENGTH, 'k');
