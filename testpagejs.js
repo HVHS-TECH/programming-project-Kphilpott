@@ -4,6 +4,7 @@ console.log("why");
 const VELARRAY = [-1, 1];
 const LENGTH = 850;
 const HEIGHT = 15;
+
 function setup() {
 	console.log("setup: wekonfgownfg");
 	cnv = new Canvas(800, 800);
