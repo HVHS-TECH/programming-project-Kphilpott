@@ -1,4 +1,4 @@
-console.log("why");
+console.log("START");
 
 ///A little setup for a test
 const VELARRAY = [-1, 1];
@@ -6,7 +6,7 @@ const LENGTH = 680;
 const HEIGHT = 15;
 
 function setup() {
-	console.log("setup: wekonfgownfg");
+	console.log("setup: Canvas and World");
 	cnv = new Canvas(800, 800);
 	world.gravity.y = 0;
 	playerGroup = new Group();
