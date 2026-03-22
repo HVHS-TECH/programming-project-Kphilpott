@@ -2,7 +2,7 @@ console.log("why");
 
 ///A little setup for a test
 const VELARRAY = [-1, 1];
-const LENGTH = 850;
+const LENGTH = 680;
 const HEIGHT = 15;
 
 function setup() {
@@ -22,10 +22,14 @@ function setup() {
 
      ///Walls, numbered in order of left top right bottom
 	 //first two numbers in each line of code are the coordinates it spawns at!
-	platform_1 = new Sprite(70, 500, HEIGHT, LENGTH, 'k');
-	platform_2 = new Sprite(500, 70, LENGTH, HEIGHT, 'k');
-	platform_3 = new Sprite(750, 500, HEIGHT, LENGTH, 'k');
-	platform_4 = new Sprite(500, 750, LENGTH, HEIGHT, 'k');
+	platform_1 = new Sprite(70, 410, HEIGHT, LENGTH, 'k');
+	platform_2 = new Sprite(410, 70, LENGTH, HEIGHT, 'k');
+	platform_3 = new Sprite(750, 410, HEIGHT, LENGTH, 'k');
+	platform_4 = new Sprite(410, 750, LENGTH, HEIGHT, 'k');
+	platform_1.color = 'blue';
+	platform_2.color = 'blue';
+	platform_3.color = 'blue';
+	platform_4.color = 'blue';
 	console.log("setup: walls done");
 
 	//create alien group and run function to spawn them, then log it.
@@ -52,6 +56,7 @@ function aliens() {
 		alien.bounciness = 1;
 		alien.friction = -0.0000001;
 		alien.drag = -0.05;
+		alien.color = 'green';
 		alienGroup.add(alien);
         
 	}
