@@ -55,7 +55,7 @@ function aliens() {
 		alien.vel.y = random(0.5, 0.7) * random(VELARRAY);
 		alien.bounciness = 1;
 		alien.friction = -0.0000001;
-		alien.drag = -0.05;
+		alien.drag = -0.06;
 		alien.color = 'green';
 		alienGroup.add(alien);
         
