@@ -71,19 +71,19 @@ function draw() {
 
 
 	//movement controls
-	if (kb.pressing('left')) {
+	if (kb.pressing('a')) {
 		bob.vel.x = -3.5;
 	}
 
-	else if (kb.pressing('right')) {
+	else if (kb.pressing('d')) {
 		bob.vel.x = 3.5;
 	}
 
-	else if (kb.pressing('up')) {
+	else if (kb.pressing('w')) {
 		bob.vel.y = -3.5;
 	}
 
-	else if (kb.pressing('down')) {
+	else if (kb.pressing('s')) {
 		bob.vel.y = 3.5;
 	}
 
