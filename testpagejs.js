@@ -48,7 +48,7 @@ function func2Call(_alien, _playerGroup) {
 
 function aliens() {
     //spawn 10 "aliens"
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < 13; i++) {
 
 		alien = new Sprite(random(425, 475), random(425, 475), 23);
 		alien.vel.x = random(0.5, 0.7) * random(VELARRAY);
