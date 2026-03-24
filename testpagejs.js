@@ -50,7 +50,7 @@ function aliens() {
     //spawn 10 "aliens"
 	for (i = 0; i < 10; i++) {
 
-		alien = new Sprite(random(425, 475), random(425, 475), 20);
+		alien = new Sprite(random(425, 475), random(425, 475), 23);
 		alien.vel.x = random(0.5, 0.7) * random(VELARRAY);
 		alien.vel.y = random(0.5, 0.7) * random(VELARRAY);
 		alien.bounciness = 1;
