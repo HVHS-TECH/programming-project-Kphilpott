@@ -88,6 +88,14 @@ function draw() {
 	}
 
 
+
+
+
+
+
+
+
+
 	//failed code
 if (alienGroup.collides(playerGroup)){
 	Text("Game Over!", 350, 350)
