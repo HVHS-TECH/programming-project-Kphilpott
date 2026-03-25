@@ -36,6 +36,8 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
+	console.log("Current Version: 1.4 'Arrow'.");
+	console.log("Thank you for playing");
 };
 
 function func2Call(_alien, _playerGroup) {
@@ -71,19 +73,19 @@ function draw() {
 
 
 	//movement controls
-	if (kb.pressing('a')) {
+	if (kb.pressing('left')) {
 		bob.vel.x = -3.5;
 	}
 
-	else if (kb.pressing('d')) {
+	else if (kb.pressing('right')) {
 		bob.vel.x = 3.5;
 	}
 
-	else if (kb.pressing('w')) {
+	else if (kb.pressing('up')) {
 		bob.vel.y = -3.5;
 	}
 
-	else if (kb.pressing('s')) {
+	else if (kb.pressing('down')) {
 		bob.vel.y = 3.5;
 	}
 
