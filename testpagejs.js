@@ -4,6 +4,7 @@ console.log("START");
 const VELARRAY = [-1, 1];
 const LENGTH = 680;
 const HEIGHT = 15;
+//var ALIVE = true;
 
 function setup() {
 	console.log("setup: Canvas and World");
@@ -36,7 +37,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.4 'Arrow'.");
+	console.log("Current Version: 1.4.0.1 'Stupidity'.");
 	console.log("Thank you for playing");
 };
 
@@ -62,9 +63,22 @@ function aliens() {
 		alienGroup.add(alien);
         
 	}
-	alienGroup.collides(playerGroup, func2Call);
+	alienGroup.collides(playerGroup, func2Call);//, death);
 }
 
+
+///function death() {
+//	ALIVE = false;
+//	console.log("You Died!");
+
+//};
+
+//function score() {
+
+//while (ALIVE == true) {
+	
+//}
+//};
 
 
 ///Draw Loop
