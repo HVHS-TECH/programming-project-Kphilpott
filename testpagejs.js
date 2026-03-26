@@ -38,7 +38,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.5 'High Score'.");
+	console.log("Current Version: 1.5f 'High Score'.");
 	console.log("Thank you for playing!");
 };
 
@@ -108,16 +108,6 @@ if (ALIVE == false) {
 return;
 };
 
-
-
-
-
-	//failed code
-if (alienGroup.collides(playerGroup)){
-	Text("Game Over!", 350, 350)
-}
-
-///pain, theres nothing online about this... cant make it do a game over screen
 
 };
 
