@@ -4,7 +4,8 @@ console.log("START");
 const VELARRAY = [-1, 1];
 const LENGTH = 680;
 const HEIGHT = 15;
-//var ALIVE = true;
+var ALIVE = true;
+var score = 0;
 
 function setup() {
 	console.log("setup: Canvas and World");
@@ -37,8 +38,8 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.4.0.1 'Stupidity'.");
-	console.log("Thank you for playing");
+	console.log("Current Version: 1.5 'High Score'.");
+	console.log("Thank you for playing!");
 };
 
 function func2Call(_alien, _playerGroup) {
@@ -46,6 +47,7 @@ function func2Call(_alien, _playerGroup) {
 	// Delete the aliens and player when they touch, requiring a page reload after.
 	alienGroup.deleteAll();
 	playerGroup.deleteAll();
+	death();
 
 }
 
@@ -63,22 +65,15 @@ function aliens() {
 		alienGroup.add(alien);
         
 	}
-	alienGroup.collides(playerGroup, func2Call);//, death);
+	alienGroup.collides(playerGroup, func2Call);
 }
 
 
-///function death() {
-//	ALIVE = false;
-//	console.log("You Died!");
+function death() {
+	ALIVE = false;
+	console.log("You Died! Final Score: " + score);
+};
 
-//};
-
-//function score() {
-
-//while (ALIVE == true) {
-	
-//}
-//};
 
 
 ///Draw Loop
@@ -103,10 +98,15 @@ function draw() {
 		bob.vel.y = 3.5;
 	}
 
+if (ALIVE == true) {
+	score = score + 0.01;
+	ScoreNumber.textContent = ("Score: ") + score;
+};
 
-
-
-
+if (ALIVE == false) {
+	ScoreNumber.textContent = ("You Died! Final Score: ") + score;
+return;
+};
 
 
 
