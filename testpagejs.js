@@ -38,7 +38,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.5f 'High Score'.");
+	console.log("Current Version: 1.5.1 'High Score'.");
 	console.log("Thank you for playing!");
 };
 
