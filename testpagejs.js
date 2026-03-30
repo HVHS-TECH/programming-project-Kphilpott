@@ -46,6 +46,9 @@ function setup() {
 	console.log("Aliens Spawned")
 	console.log("Current Version: 1.6 'Block'");
 	console.log("Thank you for playing!");
+	if (isChromium) {
+       return;
+	};
 };
 
 function func2Call(_alien, _playerGroup) {
@@ -115,9 +118,7 @@ if (ALIVE == false) {
 return;
 };
 
-if (isChromium) {
-       return;
-	};
+
 };
 
 
