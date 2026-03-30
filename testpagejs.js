@@ -7,12 +7,18 @@ const HEIGHT = 15;
 var ALIVE = true;
 var score = 0;
 
+//attempt at detecting and blocking chrome browser
+var isChromium = window.chrome
+
+
 function setup() {
 	console.log("setup: Canvas and World");
 	cnv = new Canvas(800, 800);
 	world.gravity.y = 0;
 	playerGroup = new Group();
 	
+
+
 	///Create the player named "bob"
 	bob = new Sprite(180, 120, 30, 35, 'd');
 	bob.color = 'red';
@@ -38,7 +44,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.5.1f 'High Score'.");
+	console.log("Current Version: 1.6 'Block'");
 	console.log("Thank you for playing!");
 };
 
@@ -50,6 +56,7 @@ function func2Call(_alien, _playerGroup) {
 	death();
 
 }
+
 
 function aliens() {
     //spawn 10 "aliens"
@@ -108,10 +115,10 @@ if (ALIVE == false) {
 return;
 };
 
-
+if (isChromium) {
+       return;
+	};
 };
-
-
 
 
 /// WORK ALREADY
