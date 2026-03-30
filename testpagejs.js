@@ -7,8 +7,6 @@ const HEIGHT = 15;
 var ALIVE = true;
 var score = 0;
 
-//attempt at detecting and blocking chrome browser
-var isChromium = window.chrome
 
 
 function setup() {
@@ -16,8 +14,6 @@ function setup() {
 	cnv = new Canvas(800, 800);
 	world.gravity.y = 0;
 	playerGroup = new Group();
-	
-
 
 	///Create the player named "bob"
 	bob = new Sprite(180, 120, 30, 35, 'd');
@@ -46,9 +42,7 @@ function setup() {
 	console.log("Aliens Spawned")
 	console.log("Current Version: 1.6 'Block'");
 	console.log("Thank you for playing!");
-	if (isChromium) {
-       return;
-	};
+	
 };
 
 function func2Call(_alien, _playerGroup) {
