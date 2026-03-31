@@ -40,7 +40,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.6.2 'Difficulty Tweak' Part 3");
+	console.log("Current Version: 1.6.3 'Difficulty Tweak' Part 3");
 	console.log("Thank you for playing!");
 	
 };
@@ -59,7 +59,7 @@ function aliens() {
     //spawn 10 "aliens"
 	for (i = 0; i < 13; i++) {
 
-		alien = new Sprite(random(425, 475), random(425, 475), 23);
+		alien = new Sprite(random(425, 475), random(425, 475), 26);
 		alien.vel.x = random(0.5, 0.7) * random(VELARRAY);
 		alien.vel.y = random(0.5, 0.7) * random(VELARRAY);
 		alien.bounciness = 1;
