@@ -56,7 +56,7 @@ function func2Call(_alien, _playerGroup) {
 
 
 function aliens() {
-    //spawn 10 "aliens"
+    //spawn 13 "aliens"
 	for (i = 0; i < 13; i++) {
 
 		alien = new Sprite(random(425, 475), random(425, 475), 26);
