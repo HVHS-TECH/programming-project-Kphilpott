@@ -40,7 +40,7 @@ function setup() {
 	alienGroup = new Group();
 	aliens();
 	console.log("Aliens Spawned")
-	console.log("Current Version: 1.6.1 'Request'");
+	console.log("Current Version: 1.6.2 'Difficulty Tweak' Part 3");
 	console.log("Thank you for playing!");
 	
 };
@@ -64,7 +64,7 @@ function aliens() {
 		alien.vel.y = random(0.5, 0.7) * random(VELARRAY);
 		alien.bounciness = 1;
 		alien.friction = -0.0000001;
-		alien.drag = -0.066;
+		alien.drag = -0.09;
 		alien.color = 'green';
 		alienGroup.add(alien);
         
